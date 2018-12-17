@@ -1,0 +1,1154 @@
+@import "../font/iconfont.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a:link,a:visited,a:active{
+  color: inherit;
+  text-decoration: none;
+}
+button, input {
+  border: none;
+  outline: none;
+}
+
+$white: #fff;
+$none: none;
+$transparent: #transparent;
+$color-one: #ebc598;
+$color-twe: #927e67;
+$color: #EBC598;
+$color1: rgba(233, 194, 148, 0.11);
+$color: rgb(233, 194, 148);
+/*字体设置*/
+
+@font-face {
+  font-family: 'myFont';
+  src: url('http://pro.constant.cdn.eighteen018.com/Font/NotoSansCJK-Light.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@-webkit-keyframes shake {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+@keyframes shake {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  vertical-align: middle;
+  margin-top: 0;
+  background: transparent;
+  border:#535356 solid 1px;
+  border-radius: 2px;
+  min-height: 12px;
+  min-width: 12px;
+  outline: none;
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  background: #927E67
+}
+
+input[type=checkbox]:checked::after {
+  content: '';
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  background: transparent;
+  border: #fff solid 1px;
+  border-top: none;
+  border-right: none;
+  height: 4px;
+  width: 8px;
+  margin-left: -4px;
+  margin-top: -4px;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+/*主页面*/
+#app {
+  color: #2c3e50;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background:#1B1B1C;
+  background-size:100% 100%;
+  font-family: PingFang-SC,PingFang-SC-Regular,'myFont',Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;;
+  .footerMenu {
+    position: fixed;
+    height: 40px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.06);
+    bottom: 0;
+    left: 0;
+    .menu {
+      width: 120px;
+      height: 100%;
+      margin: 0 auto;
+      button {
+        height: 100%;
+        border: $none;
+        width: 60px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+/*404页面*/
+#notFound {
+  height: 150px;
+  width: 100%;
+  position: fixed;
+  top: 176px;
+  left: 0;
+  & > img {
+    width: 100%;
+    height: 94px;
+  }
+  p {
+    margin-top: 38px;
+    text-align: center;
+    color: rgba(246, 246, 246, 0.63);
+    font-size: 12px;
+    height: 17px;
+    font-weight: 400;
+    line-height: 17px;
+    img {
+      width: 12px;
+      display: inline-block;
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+    span {
+      color: #f6f6f6;
+    }
+  }
+}
+
+.menuBtn {
+  position: fixed;
+  z-index: 999;
+  background-color: #fff;
+  width: 100%;
+  height: 30px;
+  bottom: 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 30px;
+  color: #333;
+}
+
+.EnterOut {
+  width: 100%;
+  height: 98px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20px;
+  button {
+    min-width: 328px;
+    height: 40px;
+    width: 100%;
+    background: rgba(235, 197, 152, 1);
+    border-radius: 2px;
+    font-size: 14px;
+    border: none;
+    font-weight: bold;
+    color: rgba(40, 40, 43, 1);
+    line-height: 40px;
+  }
+  background: url("../img/buttonBack.png") no-repeat 0 -5px;
+  background-size: cover;
+}
+
+.wineForOut {
+  .wineContent {
+    height: 71px;
+    border-bottom: 1px solid rgba(233, 194, 148, 0.1);
+    .WineState {
+      h3 {
+        height: 17px;
+        font-size: 12px;
+        font-weight: bold;
+        color: rgba(235, 197, 152, 1);
+        line-height: 17px;
+        padding: 20px 0;
+        box-sizing: border-box;
+      }
+      p {
+        height: 14px;
+        font-size: 10px;
+        font-weight: 400;
+        color: rgba(146, 126, 103, 1);
+        line-height: 14px;
+      }
+    }
+    .WinePrice {
+      float: right;
+      height: 17px;
+      font-size: 12px;
+      font-weight: bold;
+      color: rgba(235, 197, 152, 1);
+      line-height: 17px;
+      margin-top: 21px;
+    }
+  }
+}
+
+#menu {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  color: #ebc598;
+  overflow: auto;
+  line-height: 16px;
+  padding-top: 1px;
+  .menuList {
+    width:100%;
+    max-width: 375px;
+    margin: 0 auto;
+    padding:0 10px;
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+  .order_name{
+    font-size: 10px;
+  }
+  .order_status{
+    font-size:14px;
+    font-family:PingFang-SC-Bold;
+    font-weight:bold;
+    color: #fff;
+    line-height: 40px;
+  }
+    .order_lis_li{
+      background: rgb(35, 35, 36);
+      border-radius:4px;
+      font-size: 12px;
+      box-sizing: border-box;
+      padding:0 20px 20px;
+      color: #a8a8a8;
+      margin-bottom: 20px;
+      line-height: 18px;
+      .order_header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        line-height: 34px;
+        font-size: 10px;
+        border-bottom: 1px solid #303032;
+        img{
+          width: 4px;
+        }
+      }
+      .order_set{
+        display: flex;
+        justify-content:space-between;
+        font-size: 10px;
+
+      }
+      button{
+        outline: none;
+        color: #fff;
+        font-size: 10px;
+        padding:0 5px;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        background: transparent;
+        border-radius: 2px;
+        margin-left: 5px;
+      }
+    }
+
+}
+.order_map{
+  img{
+    width: 8px;
+    height: 8px;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+  button{
+    color: #fff;
+    width:45px;
+    height:20px;
+    background:rgba(48,48,50,1);
+    box-shadow:4px 4px 10px 0 rgba(0,0,0,0.02);
+    border-radius:1px;
+    font-size:8px;
+  }
+}
+.MerchantHeader {
+  height: 65px;
+  width: 100%;
+  padding: 0 20px;
+  line-height: 65px;
+  box-sizing: border-box;
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  .MerchantUser{
+    font-size:10px;
+    font-family:PingFang-SC-Bold;
+    font-weight:bold;
+    color:rgba(81,80,83,1);
+  }
+  .MerchantName{
+    font-size:12px;
+    font-family:PingFang-SC-Bold;
+    font-weight:bold;
+    color:rgba(235,197,152,1);
+  }
+}
+/*登录界面*/
+#store {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: #1B1B1C;
+  background-size:100% 100%;
+  #logo {
+    width: 60px;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+    left: 53px;
+    top: 89px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .title {
+    text-align: left;
+    color: $white;
+    position: absolute;
+    top: 35.232323%;
+    left: 30px;
+    width: 185px;
+    height: 34px;
+    font-size: 12px;
+    z-index: 2;
+  }
+  #form {
+    min-width:274px;
+    width: 80%;
+    margin: 200px auto 0;
+    z-index: 2;
+    box-sizing: border-box;
+    & > div {
+      position: relative;
+      margin-bottom: 51px;
+      padding-bottom: 13px;
+      border-bottom: 1px solid #535356;
+      height: 26px;
+      &#submitContent{
+        border: $none;
+        padding: 0 ;
+        margin: 85px 0 0;
+      }
+      &#phone{
+        &.borderStyle{
+          border-bottom-color:#FCD490 ;
+        }
+        img{
+          width: 18px;
+          vertical-align: middle;
+          margin-right: 17px;
+        }
+      }
+      &#verification{
+        &.borderStyle{
+          border-bottom-color:#FCD490 ;
+        }
+        img{
+          width: 18px;
+          vertical-align: middle;
+          margin-right: 17px;
+        }
+      }
+      input {
+        width: 200px;
+        height: 25px;
+        background: transparent;
+        outline: $none;
+        border: $none;
+        color:$white;
+        font-size: 12px;
+        &::-webkit-input-placeholder {
+          color: #535356;
+        }
+        &::-moz-placeholder {
+          color: #535356;
+        }
+        &::-ms-input-placeholder {
+          color: #535356;
+        }
+        &:focus {
+          &::-webkit-input-placeholder {
+            color: transparent;
+          }
+          &::placeholder {
+            color: transparent;
+          }
+          &:-moz-placeholder {
+            color: transparent;
+          }
+          &::-moz-placeholder {
+            color: transparent;
+          }
+          &:-ms-input-placeholder {
+            color: transparent;
+          }
+        }
+      }
+      label {
+        white-space: nowrap;
+        display: inline-block;
+        color: $color-twe;
+        float: right;
+        height: 22px;
+        margin-left: -100%;
+        line-height: 22px;
+        text-align: center;
+      }
+    }
+    .errMsg {
+      position: absolute;
+      bottom: -24px;
+      color: red;
+      &.shake {
+        animation: shake .2s ease;
+      }
+    }
+    & > p {
+      font-size: 10px;
+      margin-top: 11px;
+      input {
+        vertical-align: middle;
+        display: inline-block;
+        margin-right: 4px;
+      }
+      label {
+        display: inline-block;
+        height: 20px;
+        color: #535356;
+        line-height: 20px;
+        a {
+          display: inline-block;
+          line-height: 20px;
+          vertical-align: middle;
+        }
+        span {
+          color: #897761;
+          display: inline-block;
+          text-decoration: underline;
+          margin-left: 4px;
+          vertical-align: middle;
+        }
+      }
+    }
+    #verification {
+      margin-bottom: 10px;
+      input {
+        width: 100px;
+      }
+      label {
+        font-size: 12px;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+
+  #submitContent {
+    min-width: 274px;
+    width: 100%;
+    height:  26px;
+    z-index: 3;
+    margin-top: 85px;
+  }
+  #submit {
+    min-width: 274px;
+    width: 100%;
+    height:  26px;
+    border-radius: 2px;
+    border: $none;
+    outline: $none;
+    color: #f1f1f1;
+    text-align: center;
+    font-size: 16px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .info {
+    position: fixed;
+    bottom: 23px;
+    right: 24px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #e9c294;
+    line-height: 17px;
+  }
+}
+
+#outStore {
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 90px;
+}
+
+.outStoreMsg {
+  width: 335px;
+  height: 92px;
+  line-height: 92px;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(235, 197, 152, 1);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.28);
+}
+
+.userInfo {
+  width: 355px;
+  margin: 0 auto;
+  border-bottom: 1px rgba(233, 194, 148, 0.1) solid;
+  box-sizing: border-box;
+  .content {
+    width: 335px;
+    font-size: 12px;
+    color: rgba(235, 197, 152, 1);
+    font-weight: 100;
+    margin: 0 auto ;
+  }
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+    width: 100%;
+  }
+  .userName {
+    float: left;
+    margin-bottom: 10px;
+    color: rgba(235, 197, 152, 1);
+  }
+  .time {
+    float: right;
+    margin-bottom: 10px;
+    color: rgba(146, 126, 103, 1);
+  }
+}
+
+.waiter {
+  width: 335px;
+  margin: 10px auto 0;
+  font-size: 10px;
+  font-weight: 400;
+  color: rgba(146, 126, 103, 1);
+  line-height: 14px;
+}
+
+.outWine {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+
+  background: url("../img/buttonBack.png") no-repeat 0 -5px;
+  background-size: cover;
+  button {
+    width: 328px;
+    height: 40px;
+    display: inline-block;
+    background: rgba(235, 197, 152, 1);
+    border-radius: 2px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(40, 40, 43, 1);
+  }
+}
+
+.userOutWine {
+  width: 335px;
+  margin: 0 auto;
+  .wineContent {
+    height: 71px;
+    border-bottom: 1px solid rgba(233, 194, 148, 0.1);
+    .WineState {
+      h3 {
+        height: 17px;
+        font-size: 12px;
+        font-weight: bold;
+        color: rgba(235, 197, 152, 1);
+        line-height: 17px;
+        padding: 20px 0;
+        box-sizing: border-box;
+      }
+      p {
+        height: 14px;
+        font-size: 10px;
+        font-weight: 400;
+        color: rgba(146, 126, 103, 1);
+        line-height: 14px;
+      }
+    }
+    .WinePrice {
+      float: right;
+      height: 17px;
+      font-size: 12px;
+      font-weight: bold;
+      color: rgba(235, 197, 152, 1);
+      line-height: 17px;
+      margin-top: 21px;
+    }
+  }
+}
+
+
+.subWineList {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-size: 6px 6px;
+  .headerSub {
+    width: 100%;
+    height: 70px;
+    .searchIcon {
+      float: right;
+      font-size: 10px;
+      color: RGBA(81, 80, 83, 1);
+      margin-right: 10px;
+      height: 30px;
+      line-height: 30px;
+      vertical-align: middle;
+      margin-top: 20px;
+      img {
+        width: 14px;
+        vertical-align: middle;
+      }
+    }
+    .back {
+      float: left;
+      height: 18px;
+      margin-left: 22px;
+      margin-top: 26px;
+      img {
+        height: 100%;
+      }
+    }
+    .deleteWine {
+      float: right;
+      height: 30px;
+      line-height: 30px;
+      margin-top: 20px;
+      margin-right: 20px;
+      font-size: 10px;
+      white-space: nowrap;
+      color: RGBA(81, 80, 83, 1);
+      &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+      }
+      i {
+        width: 10px;
+        font-size: 16px;
+        vertical-align: middle;
+        margin-right: 5px;
+
+      }
+    }
+  }
+
+}
+
+#MerchantListForCheckedWineCon {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: auto;
+  .m_l_f_c {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(135deg, rgba(80, 79, 82, .3) 0%, rgba(59, 59, 63, .3) 100%);
+    box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.02);
+    border-radius: 4px;
+    padding: 1px 6px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .content {
+    width: 100%;
+    font-size: 12px;
+    font-weight: bold;
+    box-sizing: border-box;
+    color: rgba(235, 197, 152, 1);
+    line-height: 17px;
+    padding: 20px 13px;
+    border-bottom: $color1 1px solid;
+    &:last-of-type {
+      border-bottom: none
+    }
+    .add {
+      float: right;
+      margin-top: 7px;
+      button {
+        width: 20px;
+        height: 20px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        color: $color;
+        font-size: 10px;
+        outline: none;
+        background-color: transparent;
+        border: none;
+        text-align: center;
+        vertical-align: middle;
+        img {
+          width: 100%;
+          height: 100%;
+          vertical-align: middle;
+        }
+        &.active {
+          color: #242327;
+          font-weight: bold;
+          background-color: $color;
+        }
+      }
+      span {
+        height: 17px;
+        font-size: 12px;
+        width: 20px;
+        text-align: center;
+        display: inline-block;
+        font-weight: bold;
+        color: rgba(235, 197, 152, 1);
+        line-height: 17px;
+        margin: 0 10px;
+      }
+    }
+    p {
+      width: 167px;
+      height: 14px;
+      font-size: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: 400;
+      color: rgba(146, 126, 103, 1);
+      line-height: 14px;
+      margin-top: 2px;
+    }
+  }
+}
+
+#back {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  text-align: center;
+  background: url("../img/buttonBack.png") no-repeat 0;
+  background-size: cover;
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: 1;
+  button {
+    min-width: 328px;
+    width: 100%;
+    height: 28px;
+    background: #C4A075;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    color: #28282B;
+    font-size: 14px;
+    font-weight: normal;
+    display: inline-block;
+  }
+}
+
+#MerchantListForCheckedWine {
+
+  .headerSub {
+    width: 100%;
+    height: 70px;
+    .searchIcon {
+      float: right;
+      font-size: 10px;
+      color: RGBA(81, 80, 83, 1);
+      margin-right: 10px;
+      height: 30px;
+      line-height: 30px;
+      vertical-align: middle;
+      margin-top: 20px;
+      img {
+        width: 14px;
+        vertical-align: middle;
+      }
+    }
+    .back {
+      float: left;
+      height: 18px;
+      margin-left: 22px;
+      margin-top: 26px;
+      img {
+        width: 22px;
+        height: 100%;
+      }
+    }
+    .deleteWine {
+      float: right;
+      height: 30px;
+      line-height: 30px;
+      margin-top: 20px;
+      width: 60px;
+      margin-right: 20px;
+      font-size: 10px;
+      white-space: nowrap;
+      color: RGBA(81, 80, 83, 1);
+      &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+      }
+      i {
+        width: 10px;
+        font-size: 16px;
+        vertical-align: middle;
+        margin-right: 5px;
+
+      }
+    }
+  }
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+#search {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  .esc {
+    float: right;
+    margin-right: 24px;
+    margin-top: 27px;
+    color: rgba(81, 80, 83, 1);
+  }
+  .form {
+    width: 290px;
+    height: 30px;
+    background: rgb(255, 255, 255);
+    border-radius: 15px;
+    font-size: 17px;
+    overflow: hidden;
+    float: left;
+    display: block;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    button {
+      border: none;
+      outline: none;
+      background: transparent;
+      vertical-align: middle;
+      position: absolute;
+      top: 5px;
+      left: 8px;
+    }
+    input {
+      background: transparent;
+      height: 100%;
+      border: none;
+      outline: none;
+      color: #333;
+      width: 250px;
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+  }
+
+  .searchList {
+    box-sizing: border-box;
+    padding: 0 26px;
+    margin-top: 5px;
+    color: #ffffff;
+
+    .searchListLi {
+      font-size: 14px;
+      font-weight: bold;
+      box-sizing: border-box;
+      border-bottom: 1px rgba(81, 80, 83, 0.4) solid;
+      padding: 10px 0;
+      .add {
+        float: right;
+        margin-top: 7px;
+        button {
+          width: 20px;
+          height: 20px;
+          box-sizing: border-box;
+          border-radius: 4px;
+          color: rgb(233, 194, 148);
+          font-size: 10px;
+          outline: none;
+          background-color: transparent;
+          border: none;
+          text-align: center;
+          vertical-align: middle;
+          img {
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+          }
+          &.active {
+            color: #242327;
+            font-weight: bold;
+            background-color: rgb(233, 194, 148);
+          }
+        }
+        span {
+          height: 17px;
+          font-size: 12px;
+          width: 20px;
+          text-align: center;
+          display: inline-block;
+          font-weight: bold;
+          color: rgba(235, 197, 152, 1);
+          line-height: 17px;
+          margin: 0 10px;
+        }
+      }
+      &:after {
+        width: 100%;
+        content: '';
+        display: block;
+        box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 2px;
+        clear: both;
+      }
+      .searchName {
+        float: left;
+        h3 {
+          font-weight: normal;
+          height: 20px;
+          font-size: 14px;
+          color: rgba(235, 197, 152, 1);
+          line-height: 20px;
+        }
+        p {
+          height: 14px;
+          font-size: 10px;
+          font-weight: 400;
+          color: rgba(146, 126, 103, 1);
+          line-height: 14px;
+        }
+      }
+      .price {
+        float: right;
+        font-weight: normal;
+        font-size: 12px;
+      }
+    }
+  }
+
+}
+
+.com {
+  width: 100%;
+  height: auto;
+}
+
+.dialogBox {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.63);
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  padding: 0 20px;
+  .dialogBoxContent {
+    min-width: 334px;
+    width: 100%;
+    height: 416px;
+    background: linear-gradient(135deg, rgba(51, 50, 53, 1) 0%, rgba(9, 9, 13, 1) 100%);
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.16);
+    border-radius: 6px;
+    margin-top: 58px;
+    box-sizing: border-box;
+    padding: 0 17px;
+  }
+  .dialogTitle {
+    width: 100%;
+    text-align: center;
+    height: 68px;
+    line-height: 68px;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(235, 197, 152, 1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.28);
+  }
+  .userPhone {
+    h4 {
+      height: 14px;
+      font-size: 10px;
+      font-weight: 300;
+      color: rgba(235, 197, 152, 1);
+      line-height: 14px;
+    }
+    p {
+      height: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      color: rgba(235, 197, 152, 1);
+      line-height: 20px;
+      margin-top: 4px;
+    }
+  }
+  .wineCont {
+    height: 209px;
+    margin-top: 20px;
+    width: 100%;
+    overflow: auto;
+  }
+  .dialogFooter {
+    width: 100%;
+    margin-top: 30px;
+    & > div {
+      width: 50%;
+      height: 28px;
+      display: inline-block;
+      float: left;
+      line-height: 28px;
+      text-align: center;
+      font-size: 14px;
+      &.dialogFooterEnter {
+        float: right;
+        background: rgba(235, 197, 152, 1);
+        border-radius: 2px;
+        font-weight: 400;
+        color: rgba(40, 40, 43, 1);
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dialog {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 100%;
+  top: 0;
+  z-index: 2;
+  &.hide{
+    left: 0;
+  }
+  .dialogBack{
+    width: 100%;
+    height: 100%;
+    background-size: 100%  100%;
+    background:rgba(0,0,0,0.6);
+    filter:blur(1px);
+  }
+}
+
+
+
+
+
+
+
+
